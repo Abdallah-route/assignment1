@@ -1,32 +1,39 @@
 "use strict";
 
 //number 1
-let number = "123";
-number *= 1;
-number += 7;
-console.log(number);
+const number = function (x) {
+
+    x *= 1;
+    x += 7;
+    return x;
+    // or return Number (x)+ 7
+}
+console.log(number('123'));
 
 //number 2
-const given = false;
-if (given == true) {
-    console.log("good to go");
-} else {
-    console.log('invalid');
-}
-
-//number 3
-for (let i = 1; i <= 10; i++) {
-    if (i % 2 === 0) {
-        continue;
+const given = function (given) {
+    if (given == true) {
+        return "good to go";
+    } else {
+        return 'invalid';
     }
-    console.log(i);
 }
-
+console.log(given(0));
+//number 3
+function printOdd() {
+    for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 0) {
+            continue;
+        }
+        console.log(i);
+    }
+}
+console.log(printOdd());
 //number 4
-const example = [1, 2, 4, 5, 6, 7, 8];
-const evens = example.filter(num => num % 2 == 0);
-console.log(evens);
-
+function example(arr) {
+    return arr.filter(num => num % 2 === 0);
+}
+console.log(example([1, 2, 3, 4, 5, 6, 7, 8]));
 //number 5
 function mergeArrays(arr1, arr2) {
     const merged = [...arr1, ...arr2];
@@ -35,34 +42,35 @@ function mergeArrays(arr1, arr2) {
 console.log(mergeArrays([1, 2, 3], [4, 5, 6]));
 
 //number 6
-
-const day = 2
-switch (day) {
-    case 1:
-        console.log('sunday');
-        break;
-    case 2:
-        console.log('monday');
-        break;
-    case 3:
-        console.log('tuesday');
-        break;
-    case 4:
-        console.log('wednesday');
-        break;
-    case 5:
-        console.log('thursday');
-        break;
-    case 6:
-        console.log('friday');
-        break;
-    case 7:
-        console.log('satureday');
-        break;
-    default:
-        console.log('not a day');
+function guessTheDay(day) {
+    switch (day) {
+        case 1:
+            console.log('sunday');
+            break;
+        case 2:
+            console.log('monday');
+            break;
+        case 3:
+            console.log('tuesday');
+            break;
+        case 4:
+            console.log('wednesday');
+            break;
+        case 5:
+            console.log('thursday');
+            break;
+        case 6:
+            console.log('friday');
+            break;
+        case 7:
+            console.log('satureday');
+            break;
+        default:
+            console.log('not a day');
+    }
+    return day;
 }
-
+console.log(guessTheDay(7));
 
 // number7
 function lengths(arr) {
@@ -148,4 +156,4 @@ loops theough iterable objects
 3. == (compares value ) , === (compares value and type)
 
 5. conversion ( done by java), coersion(done by me)
-
+*/
